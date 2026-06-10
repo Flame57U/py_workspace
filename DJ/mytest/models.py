@@ -1,11 +1,14 @@
-f = "Begin"
-print(f" {f}")
-user_prompt = input("ds: ")
-a = float(input("数字: "))
-print(f"{round(a/7,1)} cm")
+import replicate
 
-print(f"用户输入: {user_prompt}\n" + "="*40)
+output = replicate.run(
+  "black-forest-labs/flux-dev",
+  input={
+    "aspect_ratio": "1:1",
+    "num_outputs": 1,
+    "output_format": "jpg",
+    "output_quality": 80,
+    "prompt": "An astronaut riding a rainbow unicorn, cinematic, dramatic",
+  }
+)
 
-if __name__ == '__main__':
-    a = input("ENTER your weight: ")
-    print(f"{a} Lbs.")
+print(output)
