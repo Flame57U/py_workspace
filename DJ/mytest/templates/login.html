@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>username: </title>
-    <title>input: </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'mytest/login.css' %}">
 </head>
 <body>
-<form>
-    <h1>
-    Loginb
-</h1>
-    <label>username: </label>
-    <input type="text" placeholder="john"/>
-    <label>Password: </label>
-    <input type="password"/>
-    <button type="submit">Login</button>
-</form>
+    <main class="login-page">
+        <form class="login-card">
+            <div class="login-header">
+                <span class="eyebrow">Welcome back</span>
+                <h1>Login</h1>
+            </div>
 
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="john" autocomplete="username">
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password">
+
+            <button type="submit">Login</button>
+        </form>
+    </main>
 </body>
 </html>
