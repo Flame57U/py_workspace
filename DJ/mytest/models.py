@@ -1,5 +1,9 @@
 from django.db import models
 
+class Teacher(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    is_active = models.BooleanField(default=True)
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="名称")
