@@ -1,9 +1,8 @@
 from django.urls import path,include
 from . import views
-from .models import Music
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
-router.register(r'music', Music)
+router.register(r'music', views.MusicViewSet)
 urlpatterns = [
     path('', views.mytest, name = 'mytest'),
     path('login/', views.login, name = 'login'),
