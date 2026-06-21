@@ -61,3 +61,10 @@ class Music(models.Model):
 
     class Meta:
         db_table = "music"
+
+class Share(models.Model):
+    name = models.CharField(max_length=100)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "share"

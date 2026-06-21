@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from mytest.models import Music
+from mytest.models import Music, Share
 
 class ToUpperCaseCharField(serializers.CharField):
     def to_representation(self, value):
@@ -12,3 +12,8 @@ class MusicSerializer(serializers.ModelSerializer):
         model = Music
         # fields = '__all__'  全部 fields
         fields = ('id', 'song', 'singer', 'last_modify_date', 'created')
+
+class ShareSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Share
+        fields = ('id', 'name', 'created')
